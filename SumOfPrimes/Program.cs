@@ -8,7 +8,7 @@ namespace SumOfPrimes
      
         static public void Main()
         {
-            //Console.WriteLine("Hello World!") check;
+            //Console.WriteLine("Hello World!cd") check;
             int numberOfTestCases = Int32.Parse(Console.ReadLine());
             int[] mySums = new int[numberOfTestCases];
             for (int k = 0; k < numberOfTestCases; k++)
