@@ -10,13 +10,14 @@ namespace SumOfPrimes
         {
             //Console.WriteLine("Hello World!cd")se check dske;
             int numberOfTestCases = Int32.Parse(Console.ReadLine());
-            int[] mySums = new int[numberOfTestCases];
+            int[] primeSums = new int[numberOfTestCases];
             for (int k = 0; k < numberOfTestCases; k++)
             {
                 List<int> primeNumbers = new List<int>();
                 int number = Int32.Parse(Console.ReadLine());
                 //for (int i = 2; i < number; i++)
                 //    {
+                //this is just to test
                 //        bool isPrime = false;
                 //        if (i == 2)
                 //            isPrime=true;
@@ -39,10 +40,10 @@ namespace SumOfPrimes
                 primeNumbers = GetPrimeNumbers2(number);
                     foreach (int n in primeNumbers)
                     sumOfPrime = sumOfPrime + n;
-                mySums[k]= sumOfPrime;
+                primeSums[k]= sumOfPrime;
                 //Console.WriteLine(sumOfPrime);
             }
-            foreach (int sum in mySums)
+            foreach (int sum in primeSums)
                 Console.WriteLine(sum);
             Console.ReadLine();
         }
