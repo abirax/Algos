@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 /// <summary>
 /// all about linkedlist, how to add node, how to add node in sorted manner
 /// </summary>
@@ -86,7 +87,26 @@ namespace AllAboutLinkedList
                     head.Print();
             }
 
-        }
+            public void RemoveDuplicates(Node root)
+            {
+                HashSet<int> content = new HashSet<int>();
+                Node node = root;
+                while (node.next != null)
+                {
+                    if (content.Contains(node.next.data))
+                    {
+                        if (node.next.next != null)
+                            node.next = node.next.next;
+                        else
+                            node.next = null;
+                        continue;
+                    }
+                    content.Add(node.next.data);
+                    node = node.next;
+
+                }
+            }
+            }
         static void Main(string[] args)
         {
             Node myNode = new Node(7);
@@ -118,12 +138,29 @@ namespace AllAboutLinkedList
             myList.AddToList(10);
             myList.AddToList(5);
 
-            myList.AddToList(12);
-            myList.AddToList(9);
-            myList.PrintList();
-            //    Console.WriteLine("Hello World!");
+                myList.AddToList(12);
+                myList.AddToList(9);
 
-            Console.WriteLine("now comes sorrted");
+                myList.AddToList(12);
+            myList.AddToList(9);
+
+                myList.AddToList(12);
+
+            myList.AddToList(1172);
+            myList.AddToList(9);
+            myList.AddToList(112);
+            myList.AddToList(5);
+            myList.AddToList(93);
+            myList.AddToList(93);
+            myList.AddToList(5);
+
+            myList.PrintList();
+                 Console.WriteLine("Above Contains duplicate World!");
+
+                myList.RemoveDuplicates(myList.head);
+                myList.PrintList();
+                Console.WriteLine("removing duplicates ");
+                Console.WriteLine("now comes sorrted");
             MyList myList1 = new MyList();
             myList1.AddSorted(8);
             myList1.AddSorted(10);
